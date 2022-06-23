@@ -1,0 +1,464 @@
+.container,
+.wrapper {
+  width: 85%;
+  margin: auto;
+}
+
+body {
+  background: white;
+}
+
+img {
+  width: 100%;
+}
+
+header {
+  padding-top: 30px;
+  position: fixed;
+  width: 100%;
+  background: white;
+  height: 70px;
+  z-index: 5;
+
+  nav {
+    .nav-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .icon-toggle {
+        z-index: 11;
+
+        .icon-hamburger {
+          position: absolute;
+
+          &.show {
+            opacity: 0;
+          }
+        }
+
+        .icon-close {
+          opacity: 0;
+          transition: 0.5s;
+
+          &.show {
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    .menu {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      background: $VeryDarkBlue;
+      display: none;
+      animation: menu ease forwards 1s;
+
+      &.show {
+        display: block;
+      }
+
+      &-icon {
+        padding: 30px 0 35px 25px;
+      }
+
+      &-list {
+        li {
+          @extend %list;
+        }
+      }
+
+      &-btn {
+        padding-top: 30px;
+
+        button {
+          @extend %menu-btn;
+        }
+      }
+
+      &-media {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translate(-50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .twitter {
+          padding-left: 30px;
+        }
+      }
+    }
+  }
+}
+
+section {
+  padding-top: 130px;
+
+  %p {
+    padding-top: 10px;
+    font-size: 0.9rem;
+    line-height: 25px;
+    color: $GrayishBlue;
+  }
+
+  %design {
+    width: 83%;
+    background: $SoftBlue;
+    position: absolute;
+    right: 0;
+    z-index: -1;
+  }
+
+  .first-article {
+    animation: appear 1s ease 4s forwards;
+    opacity: 0;
+
+    .bookmark-manager {
+      padding-bottom: 150px;
+
+      &-illustration {
+        position: relative;
+
+        img {
+          width: 100%;
+        }
+
+        .bookmark-manager-design {
+          @extend %design;
+          border-radius: 50px 0 0 100px;
+          top: 70px;
+          height: 75%;
+        }
+      }
+
+      &-article {
+        text-align: center;
+        padding-top: 50px;
+
+        h1 {
+          font-size: 1.5rem;
+        }
+
+        p {
+          @extend %p;
+        }
+
+        &-btn {
+          padding-top: 30px;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.5rem;
+          justify-content: center;
+          align-items: center;
+
+          .chrome-btn {
+            @extend %chromebtn;
+          }
+
+          .firefox-btn {
+            @extend %firefoxbtn;
+          }
+        }
+      }
+    }
+  }
+
+  .second-article {
+    // animation: appear 2s ease 4s forwards;
+    // opacity: 0;
+
+    .feature {
+      text-align: center;
+
+      h2 {
+        font-size: 1.3rem;
+        padding-bottom: 10px;
+      }
+
+      p {
+        @extend %p;
+      }
+    }
+
+    .feature-slider {
+      ul {
+        padding-top: 50px;
+        padding-bottom: 50px;
+        li {
+          div {
+            border-bottom: 4px solid $SoftRed;
+            width: 150px;
+            margin: auto;
+            display: none;
+          }
+
+          text-align: center;
+          list-style: none;
+          line-height: 50px;
+          border: 1px solid $GrayishBlue;
+          border-right: transparent;
+          border-left: transparent;
+        }
+      }
+    }
+
+    .slider {
+      overflow: hidden;
+      .slider-flex {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.1rem;
+        width: 300%;
+
+        .slider1,
+        .slider2,
+        .slider3 {
+          padding-top: 50px;
+
+          .slider-image-design {
+            position: relative;
+
+            img {
+              width: 100%;
+            }
+
+            .slider-design {
+              @extend %design;
+              left: 0;
+              border-bottom-right-radius: 100px;
+              top: 40px;
+              height: 95%;
+            }
+          }
+          .slider-article {
+            padding-top: 80px;
+            text-align: center;
+
+            h2 {
+              font-size: 1.3rem;
+            }
+
+            p {
+              @extend %p;
+            }
+
+            button {
+              @extend %slider-btn;
+            }
+          }
+        }
+
+        .slider3,
+        .slider2 {
+          .slider-design {
+            border-top-right-radius: 180px;
+          }
+        }
+      }
+    }
+  }
+
+  .third-article {
+    padding-bottom: 100px;
+
+    %browser {
+      margin: 50px 0 50px 0;
+      padding-top: 50px;
+      padding-bottom: 30px;
+      background: white;
+      box-shadow: 0px 5px 10px lighten($GrayishBlue, 20%);
+
+      h3 {
+        padding-top: 20px;
+      }
+
+      .extension-border {
+        margin-top: 30px;
+        margin-bottom: 20px;
+      }
+
+      button {
+        padding: 20px 40px 20px 40px;
+        border-radius: 5px;
+        background: $SoftBlue;
+        color: white;
+        font-size: 0.8rem;
+        box-shadow: 0px 5px 5px lighten($SoftBlue, 30%);
+      }
+    }
+
+    .extension {
+      text-align: center;
+      padding-top: 150px;
+
+      h3 {
+        font-size: 1.3rem;
+      }
+
+      p {
+        @extend %p;
+      }
+
+      &-chrome,
+      &-firefox,
+      &-opera {
+        @extend %browser;
+      }
+    }
+  }
+
+  .fourth-article {
+    padding-bottom: 100px;
+
+    .survey {
+      h4 {
+        font-size: 1.3rem;
+        padding: 0 20px 10px 20px;
+        letter-spacing: 1px;
+        text-align: center;
+      }
+
+      p {
+        @extend %p;
+        text-align: center;
+      }
+
+      &-questions {
+        padding-top: 50px;
+
+        .first-survey,
+        .second-survey,
+        .third-survey,
+        .fourth-survey {
+          @extend %survey;
+          border-bottom: 1px solid $GrayishBlue;
+          padding-bottom: 15px;
+        }
+      }
+
+      button {
+        @extend %slider-btn;
+        position: relative;
+        left: 50%;
+        transform: translate(-50%);
+        margin-top: 50px;
+      }
+    }
+  }
+
+  .fifth-article {
+    background: $SoftBlue;
+    padding-top: 80px;
+    padding-bottom: 50px;
+    text-align: center;
+
+    .contact {
+      color: white;
+
+      p {
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+      }
+
+      h5 {
+        font-size: 1.3rem;
+        padding-top: 20px;
+        padding-bottom: 10px;
+      }
+
+      &-form {
+        margin-top: 20px;
+        position: relative;
+        padding: 2px 2px 0 2px;
+        border-radius: 8px;
+
+        .error {
+          text-align: left;
+          letter-spacing: normal;
+          text-transform: none;
+          padding: 5px;
+          display: none;
+
+          & em {
+            font-size: 0.7rem;
+          }
+        }
+
+        input {
+          width: 100%;
+          padding: 20px;
+          border-radius: 5px;
+
+          &::placeholder {
+            font-size: 0.9rem;
+            color: $GrayishBlue;
+          }
+        }
+
+        .icon-error {
+          position: absolute;
+          top: 23px;
+          right: 10px;
+          display: none;
+        }
+      }
+
+      .contact-btn {
+        width: 100%;
+        padding: 20px;
+        margin-top: 20px;
+        color: white;
+        border-radius: 5px;
+        background: $SoftRed;
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+footer {
+  background: $VeryDarkBlue;
+  padding: 40px 0 40px 0;
+
+  .footer-details {
+    &-wrap {
+      .footer-logo {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+      }
+
+      ul {
+        padding-top: 50px;
+
+        li {
+          list-style: none;
+          text-align: center;
+          line-height: 50px;
+          color: lighten($GrayishBlue, 30%);
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          font-size: 0.8rem;
+        }
+      }
+    }
+
+    .footer-media {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: 30px;
+
+      .twitter {
+        margin-left: 40px;
+      }
+    }
+  }
+}

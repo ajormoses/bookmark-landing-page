@@ -1,0 +1,41 @@
+/** Component animation **/
+@keyframes appear {
+  0% {
+    transform: translateY(20%);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0px);
+    opacity: 1;
+  }
+}
+
+// icon component
+@keyframes show {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(2);
+  }
+}
+
+/** Loader Disappear **/
+@keyframes dis {
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+// menu animation
+@keyframes menu {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0px);
+    opacity: 1;
+  }
+}

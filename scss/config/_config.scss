@@ -1,0 +1,46 @@
+%list {
+  list-style: none;
+  text-align: center;
+  line-height: 70px;
+  text-transform: uppercase;
+  border: 1px solid rgb(174, 174, 218);
+  border-left: transparent;
+  border-right: transparent;
+  color: rgb(219, 216, 216);
+  letter-spacing: 3px;
+}
+
+// Survey questions and answers
+
+%survey {
+  .survey-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 30px;
+
+    a {
+      color: black;
+    }
+  }
+
+  .survey-answer {
+    display: none;
+
+    p {
+      @extend %p;
+      text-align: left;
+    }
+  }
+
+  .survey-answer.show {
+    display: block;
+  }
+
+  .arrow.show {
+    transform: rotate(180deg);
+    transition: all ease-in-out 0.7s;
+    filter: grayscale(100%) brightness(100%) sepia(100%) hue-rotate(-50deg)
+      saturate(600%) contrast(0.8);
+  }
+}
